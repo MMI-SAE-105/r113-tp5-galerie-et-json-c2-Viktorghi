@@ -78,6 +78,13 @@
     /* Height auto for keeping the ratio */
     height: auto;
 }
+
+.img {
+    /* Max width 100% for responsive image */
+    max-width: 300px;
+    /* Height auto for keeping the ratio */
+    height: auto;
+}
     </style>
 </head>
 <body x-data="{
@@ -88,10 +95,10 @@
         Suscipit numquam voluptatem minima doloribus cupiditate nam ducimus 
         soluta voluptates repellendus tempore officiis, 
         autem repellat odit laboriosam aliquam fuga fugit quia aliquid!</p>
-    <img src="https://picsum.photos/id/237/400/300" alt="miniature de chiot"
+    <img class=img src="https://picsum.photos/id/237/400/300" alt="miniature de chiot"
     @click="imageAfficher = 'https://picsum.photos/id/237/400/300'">
-    <img src="https://picsum.photos/id/236/400/300" alt="miniature de chiot"
-        @click="imageAfficher = 'https://picsum.photos/id/236/400/300'">
+    <img class=img src="https://media.routard.com/image/39/5/tokyo.1484395.142.jpg" alt="miniature de chiot"
+        @click="imageAfficher = 'https://media.routard.com/image/39/5/tokyo.1484395.142.jpg'">
     <div class="overlay" x-show="imageAfficher" @click="imageAfficher = null" 
     @keyup.escape.window="imageAfficher = null">
         <figure><img :src="imageAfficher" alt="image 237... un chiot"></figure>
