@@ -81,13 +81,17 @@
     </style>
 </head>
 <body x-data="{
-    imageAfficher:'https://picsum.photos/id/237/400/300',
+    imageAfficher:'null',
 }">
     <h1>Galerie</h1>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
         Suscipit numquam voluptatem minima doloribus cupiditate nam ducimus 
         soluta voluptates repellendus tempore officiis, 
         autem repellat odit laboriosam aliquam fuga fugit quia aliquid!</p>
+    <img src="https://picsum.photos/id/237/400/300" alt="miniature de chiot"
+    @click="imageAfficher = 'https://picsum.photos/id/237/400/300'">
+    <img src="https://picsum.photos/id/236/400/300" alt="miniature de chiot"
+        @click="imageAfficher = 'https://picsum.photos/id/236/400/300'">
     <div class="overlay" x-show="imageAfficher" @click="imageAfficher = null" @keyup.escape.window="imageAfficher = null">
         <figure><img :src="imageAfficher" alt="image 237... un chiot"></figure>
     </div>
