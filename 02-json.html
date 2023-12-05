@@ -8,13 +8,37 @@
 </head>
 <body>
     <h1>JSON</h1>
-    <ul>
-        <template>
+    <ul x-data="{
+        données: [
+            {
+                nom: 'Jean',
+                projet: 'Alpine.js',
+                url: 'https://alpinejs.dev/'
+            },
+            {
+                nom: 'Maxime',
+                projet: 'Tailwind CSS',
+                url: 'https://tailwindcss.com/'
+            },
+            {
+                nom: 'Adam',
+                projet: 'Laravel',
+                url: 'https://laravel.com/'
+            }
+        ],
+        }">
+        <template x-for="obj of données">
             <li>
-                <span></span>
-                <li></li>
+                <span x-text="obj.nom">nom</span>:
+                <a :href="obj.url" x-text="obj.projet">projet</a>
             </li>
         </template>
     </ul>
 </body>
 </html>
+
+for (const obj of données) {
+console.log('nom: ',obj.nom);
+console.log('projet : ',obj.projet);
+console.log('url : ',obj.url);
+}
